@@ -17,8 +17,10 @@ public class Client implements Runnable {
 		scanner = new Scanner(System.in);
 	}
 	
+
+	/* Método da thread para receber as mensagens de outros clientes */
 	@Override
-	public void run() { /* Método da thread para receber as mensagens de outros clientes */
+	public void run() {
 		String str;
 		while((str = client_socket.getMessage()) != null) {
 
@@ -27,7 +29,8 @@ public class Client implements Runnable {
 		}
 	}
 	
-	public void start() throws UnknownHostException, IOException { /* Registra o cliente, podendo escrever e ler mensagens vindas de outros */
+	/* Registra o cliente, podendo escrever e ler mensagens vindas de outros */
+	public void start() throws UnknownHostException, IOException {
 		client_socket = new ClientSocket();
 		
 		/* Receber o fluxo de caracteres */
@@ -37,7 +40,8 @@ public class Client implements Runnable {
 		envioMensagem();
 	}
 	
-	private void envioMensagem() throws IOException { /* Lê do terminal pelo Scanner(System.in) e faz o fluxo da mensagem para o servidor */
+	/* Lê do terminal pelo Scanner(System.in) e faz o fluxo da mensagem para o servidor */
+	private void envioMensagem() throws IOException {
 		String str;
 		do {
 			System.out.println("Digite uma mensagem ou /exit para finalizar:");
