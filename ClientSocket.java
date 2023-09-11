@@ -1,5 +1,3 @@
-package entities;
-
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.net.Socket;
